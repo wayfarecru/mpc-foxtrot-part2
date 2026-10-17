@@ -177,7 +177,7 @@ template <typename TYPE>
 TYPE procArg( const char* progname, const char* str, TYPE lbound = -1, TYPE ubound = -1) {
 	char* pEnd = nullptr;
 	TYPE value = 0;
-	if (typeid(TYPE) == typeid(float) && typeid(TYPE) == typeid(double)) {
+	if (typeid(TYPE) == typeid(float) || typeid(TYPE) == typeid(double)) {
 		value = strtof( str, &pEnd );
 	} else {
 		value = strtol( str, &pEnd, 10 );
@@ -232,5 +232,5 @@ float getRMS( const float* a, const float* b, int size, bool verbose=false ) {
 
 
 /* 
-$Id: common.hpp,v 1.2 2026/08/29 01:54:39 wayfarecru Exp $
+$Id: common.hpp,v 1.3 2026/10/17 02:11:24 wayfarecru Exp $
 */
